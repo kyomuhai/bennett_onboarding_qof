@@ -19,9 +19,10 @@ actions:
       moderately_sensitive:
         measure: output/dm017/*.csv.gz
 
-  visualise_dm017_measures:
-    run: r:v2 analysis/visualise_measures_Irene.R
-    needs: [generate_dm017_measures]
-    outputs:
-      moderately_sensitive:
-        figure: output/figures/measures_plot.png
+visualise_dm017_measures:
+  run: >
+    r:latest analysis/visualise_measures.R
+  needs: [generate_dm017_measures]
+  outputs:
+    moderately_sensitive:
+      measure: output/figures/*.png
