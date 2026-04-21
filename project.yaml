@@ -8,4 +8,12 @@ actions:
       --output output/dataset.csv.gz
     outputs:
       highly_sensitive:
-        dataset: output/dataset.csv.gz
+        dataset: output/dm_reg_dataset_Irene.csv.gz
+
+ generate_dm017_measures:
+    run: > 
+      ehrql:v1 generate-measures analysis/dm_reg_measures_Irene.py
+      --output output/dm017/:csv
+    outputs:
+      moderately_sensitive:
+        measure: output/dm017/*.csv
