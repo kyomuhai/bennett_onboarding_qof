@@ -68,7 +68,7 @@ age_band = case(
 # Measures
 # Proportion of patients on dm017_reg each month by sex
 measures.define_measure(
-    name = "dm017_reg_by_sex",
+    name = "dm017_register_by_sex",
     numerator = dm017_reg,
     denominator = dm017_reg & has_recorded_sex,
     group_by = {"sex": patients.sex},

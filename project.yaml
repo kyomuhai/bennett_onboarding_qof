@@ -1,5 +1,6 @@
 version: '5.0'
 
+#to run in terminal: opensafely exec
 actions:
   generate_dataset:
     run: >
@@ -10,10 +11,17 @@ actions:
       highly_sensitive:
         dataset: output/dm_reg_dataset_Irene.csv.gz
 
- generate_dm017_measures:
-    run: > 
+  generate_dm017_measures:
+    run: >
       ehrql:v1 generate-measures analysis/dm_reg_measures_Irene.py
-      --output output/dm017/:csv
+      --output output/dm017/:csv.gz
     outputs:
       moderately_sensitive:
-        measure: output/dm017/*.csv
+        measure: output/dm017/*.csv.gz
+
+  visualise_dm017_measures:
+    run: r:v2 analysis/visualise_measures_Irene.R
+    needs: [generate_dm017_measures]
+    outputs:
+      moderately_sensitive:
+        figure: output/figures/measures_plot.png
