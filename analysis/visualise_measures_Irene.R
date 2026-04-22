@@ -13,13 +13,13 @@ dir.create(here("output", "figures"), recursive = TRUE)
 
 
 # read compressed CSV output from ehrql
-dm_measure_age_group <- read_csv("output/dm017/dm017_register_by_age.csv.gz")
+dm_measure_age_group <- read_csv("output/dm017/dm017_register_by_age.csv")
 dm_measure_age_group
 
-dm_measure_sex <- read_csv("output/dm017/dm017_register_by_sex.csv.gz")
+dm_measure_sex <- read_csv("output/dm017/dm017_register_by_sex.csv")
 dm_measure_sex
 
-dm_measure_prevalence <- read_csv("output/dm017/dm017_register_prevalence.csv.gz")
+dm_measure_prevalence <- read_csv("output/dm017/dm017_register_prevalence.csv")
 dm_measure_prevalence
 
 ####
