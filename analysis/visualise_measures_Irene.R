@@ -1,9 +1,11 @@
  # to run R: opensafely exec r R
 
 #load packages
-pacman::p_load(
-  "tidyverse", "here", "readr", "scales", "patchwork"
-)
+library("tidyverse")
+library("here")
+library("readr")
+library("scales")
+library("patchwork")
 
 
 #create a directory for the visualizations:

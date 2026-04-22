@@ -6,7 +6,7 @@ actions:
     run: >
       ehrql:v1 generate-dataset analysis/dm_reg_dataset_Irene.py
       --test-data-file analysis/test_dm_reg_dataset_Irene.py
-      --output output/dataset.csv.gz
+      --output output/dm_reg_dataset_Irene.csv.gz
     outputs:
       highly_sensitive:
         dataset: output/dm_reg_dataset_Irene.csv.gz
@@ -14,15 +14,15 @@ actions:
   generate_dm017_measures:
     run: >
       ehrql:v1 generate-measures analysis/dm_reg_measures_Irene.py
-      --output output/dm017/:csv.gz
+      --output output/dm017/:csv
     outputs:
       moderately_sensitive:
-        measure: output/dm017/*.csv.gz
+        measure: output/dm017/*.csv
 
-visualise_dm017_measures:
-  run: >
-    r:latest analysis/visualise_measures.R
-  needs: [generate_dm017_measures]
-  outputs:
-    moderately_sensitive:
-      measure: output/figures/*.png
+  visualise_dm017_measures:
+    run: >
+      r:v2 analysis/visualise_measures_Irene.R
+    needs: [generate_dm017_measures]
+    outputs:
+      moderately_sensitive:
+        measure: output/figures/*.png
