@@ -1,0 +1,5 @@
+#Diabetes mellitus codes
+nhsd-primary-care-domain-refsets/dm_cod/20250912
+
+# Diabetes resolved
+nhsd-primary-care-domain-refsets/dmres_cod/20250912
